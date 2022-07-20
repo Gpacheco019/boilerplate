@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint src --max-warnings=0",
     "prepare": "husky install"
   },
   "husky": {
@@ -15,9 +15,7 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --cache --cache-location .next/cache/eslint/ --fix"
-    ]
+    "src/**/*": ["yarn lint --fix"]
   },
   "dependencies": {
     "next": "12.2.2",
